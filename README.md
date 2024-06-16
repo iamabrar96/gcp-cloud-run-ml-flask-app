@@ -3,16 +3,25 @@ This guide provides step-by-step instructions to deploy a machine learning model
 
 # Prerequisites
 A Google Cloud account.
+
 Docker installed on your local machine.
+
 Google Cloud SDK (gcloud CLI) installed. Install the gcloud CLI.
 
 Steps to Deploy
+
 1. Create a Google Cloud Project
+
 Log in to Google Cloud Console: Go to Google Cloud Console.
+
 Create a New Project:
+
 Navigate to IAM & Admin -> Manage resources.
+
 Click on Create Project.
+
 Enter your project name and note down the generated project ID.
+
 2. Set Up Google Cloud SDK
 
 Install Google Cloud SDK: Follow the installation instructions for your operating system.
