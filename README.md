@@ -12,70 +12,71 @@ Steps to Deploy
 
 1. Create a Google Cloud Project
 
-Log in to Google Cloud Console: Go to Google Cloud Console.
+    Log in to Google Cloud Console: Go to Google Cloud Console.
 
-Create a New Project:
+    Create a New Project:
 
-Navigate to IAM & Admin -> Manage resources.
+    Navigate to IAM & Admin -> Manage resources.
 
-Click on Create Project.
+    Click on Create Project.
 
-Enter your project name and note down the generated project ID.
+    Enter your project name and note down the generated project ID.
 
 2. Set Up Google Cloud SDK
 
-Install Google Cloud SDK: Follow the installation instructions for your operating system.
+    Install Google Cloud SDK: Follow the installation instructions for your operating system.
 
-Initialize gcloud:
+    Initialize gcloud:
 
-``
-gcloud init
-``
+    ``
+    gcloud init
+    ``
 
-Follow the prompts to set your default project and region.
+    Follow the prompts to set your default project and region.
 
 3. Enable Required APIs
 
-Enable the Artifact Registry API to allow pushing 
+    Enable the Artifact Registry API to allow pushing 
 
-Docker images:
+    Docker images:
 
-
-``
-gcloud services enable artifactregistry.googleapis.com --project=YOUR_PROJECT_ID
-``
+    ``
+    gcloud services enable artifactregistry.googleapis.com --project=YOUR_PROJECT_ID
+    ``
 
 4. Authenticate Docker with Google Cloud
-Authenticate Docker to use the Google Container Registry:
 
-``
-gcloud auth configure-docker
-``
+    Authenticate Docker to use the Google Container Registry:
+
+    ``
+    gcloud auth configure-docker
+    ``
 
 5. Build and Push Docker Image
 
-Build the Docker Image:
+    Build the Docker Image:
 
-``
-docker build -t gcr.io/YOUR_PROJECT_ID/ms-temp-prediction .
-``
+    ``
+    docker build -t gcr.io/YOUR_PROJECT_ID/ms-temp-prediction .
+    ``
 
-Push the Docker Image to Google Container Registry:
+    Push the Docker Image to Google Container Registry:
 
-``
-docker push gcr.io/YOUR_PROJECT_ID/ms-temp-prediction
-``
+    ``
+    docker push gcr.io/YOUR_PROJECT_ID/ms-temp-prediction
+    ``
 
 6. Deploy to Google Cloud Run
 
-Deploy the Docker image to Google Cloud Run:
+    Deploy the Docker image to Google Cloud Run:
 
-``
-gcloud run deploy ms-temp-prediction --image gcr.io/YOUR_PROJECT_ID/ms-temp-prediction --platform managed --region your region --project YOUR_PROJECT_ID
-``
+    ``
+    gcloud run deploy ms-temp-prediction --image gcr.io/YOUR_PROJECT_ID/ms-temp-prediction --platform managed --region your region --project YOUR_PROJECT_ID
+    ``
 
 7. Access Your Deployed Service
-Once deployed, Google Cloud Run will provide a URL for your service. You can access your Flask application via this URL.
+    
+    Once deployed, Google Cloud Run will provide a URL for your service. You can access your Flask application via this URL.
 
 Additional Notes
 
