@@ -14,14 +14,23 @@ Navigate to IAM & Admin -> Manage resources.
 Click on Create Project.
 Enter your project name and note down the generated project ID.
 2. Set Up Google Cloud SDK
+
 Install Google Cloud SDK: Follow the installation instructions for your operating system.
+
 Initialize gcloud:
+
 ``
 gcloud init
 ``
+
 Follow the prompts to set your default project and region.
+
 3. Enable Required APIs
-Enable the Artifact Registry API to allow pushing Docker images:
+
+Enable the Artifact Registry API to allow pushing 
+
+Docker images:
+
 
 ``
 gcloud services enable artifactregistry.googleapis.com --project=YOUR_PROJECT_ID
@@ -33,6 +42,7 @@ Authenticate Docker to use the Google Container Registry:
 ``
 gcloud auth configure-docker
 ``
+
 5. Build and Push Docker Image
 
 Build the Docker Image:
@@ -59,7 +69,9 @@ gcloud run deploy ms-temp-prediction --image gcr.io/YOUR_PROJECT_ID/ms-temp-pred
 Once deployed, Google Cloud Run will provide a URL for your service. You can access your Flask application via this URL.
 
 Additional Notes
+
 Source Name: The source name (ms-temp-prediction in this example) is a free text field. You can specify any name you prefer for your Docker image.
+
 Region: Choose the region closest to your user base from the list of supported Google Cloud regions.
 
 
