@@ -34,11 +34,13 @@ Authenticate Docker to use the Google Container Registry:
 gcloud auth configure-docker
 ``
 5. Build and Push Docker Image
+
 Build the Docker Image:
 
 ``
 docker build -t gcr.io/YOUR_PROJECT_ID/ms-temp-prediction .
 ``
+
 Push the Docker Image to Google Container Registry:
 
 ``
@@ -46,11 +48,11 @@ docker push gcr.io/YOUR_PROJECT_ID/ms-temp-prediction
 ``
 
 6. Deploy to Google Cloud Run
+
 Deploy the Docker image to Google Cloud Run:
 
 ``
-gcloud run deploy ms-temp-prediction --image gcr.io/YOUR_PROJECT_ID/ms-temp-prediction --platform managed --region your region 
---project YOUR_PROJECT_ID
+gcloud run deploy ms-temp-prediction --image gcr.io/YOUR_PROJECT_ID/ms-temp-prediction --platform managed --region your region --project YOUR_PROJECT_ID
 ``
 
 7. Access Your Deployed Service
